@@ -5,7 +5,6 @@ import * as actions from './actionTypes';
 export const loginRequest = (user,history) => (dispatch, getState, {getFirebase, getFirestore}) => {
     dispatch(showLoading());
     const firebase = getFirebase();
-    const firestore = getFirestore();
     firebase.auth().signInWithEmailAndPassword(
         user.email,user.password
     ).then((doc) => {

@@ -38,11 +38,11 @@ const SingleClass = () => {
       .catch((err) => {
         dispatch(handleAlert({ text: err.message, status: "error" }));
       });
-  }, [classId]);
+  }, [classId, dispatch]);
 
   useEffect(() => {
     if (!uid) history.push("/");
-  }, [uid]);
+  }, [uid, history]);
 
   useEffect(
     () => {

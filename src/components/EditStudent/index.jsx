@@ -12,7 +12,6 @@ const EditStudent = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
     setValue,
   } = useForm();
   const dispatch = useDispatch();
@@ -54,11 +53,11 @@ const EditStudent = () => {
       setValue("literature", literature);
       setValue("english", english);
     }
-  }, [selectedStudent]);
+  }, [selectedStudent, setValue]);
 
   useEffect(() => {
     if (!auth.uid) history.push("/");
-  }, [auth]);
+  }, [auth, history]);
 
   return classList.length > 0 ? (
     <div className="mt-10 mx-auto md:w-3/4">

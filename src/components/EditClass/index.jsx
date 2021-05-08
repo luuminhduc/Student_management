@@ -13,7 +13,7 @@ const EditClass = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+
     watch,
   } = useForm();
   const firebaseReducer = useSelector((state) => state.firebaseReducer);
@@ -42,7 +42,7 @@ const EditClass = () => {
   };
   useEffect(() => {
     if (!auth.uid) history.push("/");
-  }, [auth]);
+  }, [auth, history]);
   return (
     <div className="mt-10 mx-auto md:w-3/4">
       <p className="text-3xl font-bold">Add class</p>
